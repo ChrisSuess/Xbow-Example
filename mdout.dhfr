@@ -1,0 +1,41 @@
+
+          -------------------------------------------------------
+          Amber 16 PMEMD                              2016
+          -------------------------------------------------------
+
+| PMEMD implementation of SANDER, Release 16
+
+| Run on 04/27/2018 at 13:23:28
+
+|   Executable path: pmemd.cuda
+| Working directory: /home/ubuntu/shared/Example_Amber_GPU
+|          Hostname: Unknown
+  [-O]verwriting output
+
+File Assignments:
+|   MDIN: gbin                                                                  
+|  MDOUT: mdout.dhfr                                                            
+| INPCRD: md12.x                                                                
+|   PARM: prmtop                                                                
+| RESTRT: restart.rst                                                           
+|   REFC: refc                                                                  
+|  MDVEL: mdvel                                                                 
+|   MDEN: mden                                                                  
+|  MDCRD: mdcrd                                                                 
+| MDINFO: mdinfo                                                                
+|  MDFRC: mdfrc                                                                 
+
+
+ Here is the input file:
+
+ short md, nve ensemble                                                        
+ &cntrl                                                                        
+   ntx=7, irest=1,                                                             
+   ntc=2, ntf=2, tol=0.0000001,                                                
+   nstlim=8400, ntt=0,                                                         
+   ntpr=1, ntwr=10000,                                                         
+   dt=0.001, ig=71277,                                                         
+ /                                                                             
+
+
+ 

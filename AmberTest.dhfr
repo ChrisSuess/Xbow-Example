@@ -1,0 +1,21 @@
+#!/bin/csh -f
+
+set prmtop = "prmtop"
+if( $#argv > 0 ) then
+   set prmtop = "$1"
+endif
+
+set output = mdout.dhfr
+
+cat > gbin <<EOF
+ short md, nve ensemble
+ &cntrl
+   ntx=7, irest=1,
+   ntc=2, ntf=2, tol=0.0000001, 
+   nstlim=400, ntt=0, 
+   ntpr=1, ntwr=10000, 
+   dt=0.001, ig=71277,
+ /
+EOF
+
+pmemd.cuda -O -p $prmtop -i gbin -c md12.x -o $output -r restart.rst < /dev/null || goto error
